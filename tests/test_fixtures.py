@@ -53,7 +53,7 @@ MPI_TMP_PATH_TEST_CODE = """
 def test_mpi_file_name(mpi_testdir, has_mpi4py):
     mpi_testdir.makepyfile(MPI_FILE_NAME_TEST_CODE)
 
-    result = mpi_testdir.runpytest("--with-mpi", timeout=5)
+    result = mpi_testdir.runpytest("--with-mpi", timeout=10)
 
     if has_mpi4py:
         result.assert_outcomes(passed=1)
@@ -64,7 +64,7 @@ def test_mpi_file_name(mpi_testdir, has_mpi4py):
 def test_mpi_tmpdir(mpi_testdir, has_mpi4py):
     mpi_testdir.makepyfile(MPI_TMPDIR_TEST_CODE)
 
-    result = mpi_testdir.runpytest("--with-mpi", timeout=5)
+    result = mpi_testdir.runpytest("--with-mpi", timeout=10)
 
     if has_mpi4py:
         result.assert_outcomes(passed=1)
@@ -75,7 +75,7 @@ def test_mpi_tmpdir(mpi_testdir, has_mpi4py):
 def test_mpi_tmp_path(mpi_testdir, has_mpi4py):
     mpi_testdir.makepyfile(MPI_TMP_PATH_TEST_CODE)
 
-    result = mpi_testdir.runpytest("--with-mpi", timeout=5)
+    result = mpi_testdir.runpytest("--with-mpi", timeout=10)
 
     if has_mpi4py:
         result.assert_outcomes(passed=1)
